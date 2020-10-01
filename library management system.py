@@ -1,14 +1,16 @@
 #mast project by Randeep
 class Library:
-    def __init__(self, list, name):
+    def __init__(self, list, name):  
         self.booklist = list
         self.name = name
         self.lendDict = {}
+        
+     # Function to display the available books
     def displayBooks(self):
         print(f"There are following books with us: {self.name}")
         for book in self.booklist:
             print(book)
-
+    #Function to keep a track of lended,added books
     def lendBook(self, user,book):
         if book not in self.lendDict.keys():
             self.lendDict.update({book:user})
