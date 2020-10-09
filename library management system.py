@@ -4,20 +4,26 @@ class Library:
         self.booklist = list
         self.name = name
         self.lendDict = {}
+        
+    # To show all the books in library
     def displayBooks(self):
         print(f"There are following books with us: {self.name}")
         for book in self.booklist:
             print(book)
-
+    # To Carry/lend book from library
     def lendBook(self, user,book):
         if book not in self.lendDict.keys():
             self.lendDict.update({book:user})
             print("Lender-Book database has been updated. You can take your book now")
         else:
             print(f"Book is already taken by:{self.lendDict[book]}")
+         
+    # To add a new book in library
     def addBook(self,book):
         self.booklist.append(book)
         print("Book has been added")
+        
+    # To Return the book into the library
     def returnBook(self,book):
         self.lendDict.pop(book)
 
